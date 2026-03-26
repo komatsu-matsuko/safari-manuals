@@ -1,0 +1,29 @@
+---
+description: Controls when AI is allowed to create or modify files. Always apply to prevent unintended file changes.
+alwaysApply: true
+---
+
+# File Governance Rule — ファイル操作の制御
+
+## 絶対ルール
+
+AIは以下の**明示的なキーワード**がない限り、ファイルの作成・変更・削除を行ってはならない。
+
+## ファイル操作を許可するキーワード
+
+| キーワード | 許可される操作 |
+|-----------|--------------|
+| 「更新して」「編集して」 | 指定されたHTMLファイルを更新 |
+| 「追加して」 | 指定された内容をHTMLに追加 |
+| 「ファイルを作って」 | 新規HTMLファイルを作成 |
+| 「覚えておいて」 | 指定された内容をファイルに保存 |
+
+## 禁止されるケース
+
+- 「どう見せる？」「提案して」→ チャットで案を出すのみ
+- コードレビュー → 説明のみ
+
+## Git操作のルール
+
+- `git push` は「pushして」と言われるまで実行しない
+- HTMLの変更は必ず確認後にpush（即本番反映のため）
